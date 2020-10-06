@@ -4,9 +4,12 @@ from kivy.uix.label import Label
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.textinput import TextInput
 from kivy.uix.button import Button
+from kivy.uix.widget import Widget
 
 
 class MyGrid(GridLayout):
+    pass
+'''
     def __init__(self, **kwargs):
         super(MyGrid, self).__init__(**kwargs)
         self.cols = 1
@@ -23,8 +26,8 @@ class MyGrid(GridLayout):
         self.inside.add_widget(self.lastName)
 
         self.inside.add_widget(Label(text="ID: "))
-        self.idNumber = TextInput(multiline=False)
-        self.inside.add_widget(self.idNumber)
+        self.idNum = TextInput(multiline=False)
+        self.inside.add_widget(self.idNum)
 
         self.inside.add_widget(Label(text="Email: "))
         self.email = TextInput(multiline=False)
@@ -39,12 +42,15 @@ class MyGrid(GridLayout):
     def pressed(self, instance):
         name = self.name.text
         last = self.lastName.text
+        idNumber = self.idNum.text
         email = self.email.text
 
-        print("Name:", name, "Last Name:", last, "Email:", email)
+        print("|Name:", name, "|Last Name:", last, "|ID:", idNumber, "|Email:", email, "|")
+        # to clean the tabs we do this
         self.name.text = ""
         self.lastName.text = ""
         self.email.text = ""
+'''
 
 class MyApp(App):
     def build(self):
